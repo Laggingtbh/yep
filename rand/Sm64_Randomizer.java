@@ -530,159 +530,41 @@ public static boolean checkValidSpawn(StringBuilder sb, String coordX, String co
 int currentCoordX = Integer.valueOf(coordX,16).shortValue();
 int currentCoordY = Integer.valueOf(coordY,16).shortValue();
 int currentCoordZ = Integer.valueOf(coordZ,16).shortValue();
-if (map == "bob") {
-List<String> colPolys = getCollisionMap(sb ,"bob");
+
+List<String> colPolys = getCollisionMap(sb ,map);
+
 for(int i = 0; i < colPolys.size(); i++) {
    String tempStr = colPolys.get(i);
    if (tempStr.length() == 12) {
    //x1
-   String x1 = tempStr.substring(0, 2);
+   String x1 = tempStr.substring(0, 4);
    int x1v = Integer.valueOf(x1,16).shortValue();
-   //x2
-   String x2 = tempStr.substring(2, 4);
-   int x2v = Integer.valueOf(x2,16).shortValue();
    //y1
-   String y1 = tempStr.substring(4, 6);
+   String y1 = tempStr.substring(4, 8);
    int y1v = Integer.valueOf(y1,16).shortValue();
-   //y2
-   String y2 = tempStr.substring(6, 8);
-   int y2v = Integer.valueOf(y2,16).shortValue();
    //z1
-   String z1 = tempStr.substring(8, 10);
+   String z1 = tempStr.substring(8, 12);
    int z1v = Integer.valueOf(z1,16).shortValue();
-   //z2
-   String z2 = tempStr.substring(10, 12);
-   int z2v = Integer.valueOf(z2,16).shortValue();
-   System.out.println(x1v);
-   System.out.println(x2v);
-   System.out.println(y1v);
-   System.out.println(y2v);
-   System.out.println(z1v);
-   System.out.println(z2v);
    } else if (tempStr.length() == 16){
    //x1
-   String x1 = tempStr.substring(0, 2);
+   String x1 = tempStr.substring(0, 4);
    int x1v = Integer.valueOf(x1,16).shortValue();
-   //x2
-   String x2 = tempStr.substring(2, 4);
-   int x2v = Integer.valueOf(x2,16).shortValue();
    //y1
-   String y1 = tempStr.substring(4, 6);
+   String y1 = tempStr.substring(4, 8);
    int y1v = Integer.valueOf(y1,16).shortValue();
-   //y2
-   String y2 = tempStr.substring(6, 8);
-   int y2v = Integer.valueOf(y2,16).shortValue();
    //z1
-   String z1 = tempStr.substring(8, 10);
+   String z1 = tempStr.substring(8, 12);
    int z1v = Integer.valueOf(z1,16).shortValue();
-   //z2
-   String z2 = tempStr.substring(10, 12);
-   int z2v = Integer.valueOf(z2,16).shortValue();
    //s1
    String s1 = tempStr.substring(12, 14);
    int s1v = Integer.valueOf(s1,16).shortValue();
    //s2
    String s2 = tempStr.substring(14, 16);
    int s2v = Integer.valueOf(s2,16).shortValue();
-   System.out.println(y1v - y2v);
-
    }
+   //x1,y1,z1 here
 }
 return false;
-}
-
-if (map == "bbh") {
-return true;
-}
-
-if (map == "ccm") {
-return true;
-}
-
-if (map == "hmc") {
-return true;
-}
-
-if (map == "ssl") {
-return true;
-}
-
-if (map == "sml") {
-return true;
-}
-
-if (map == "wdw") {
-return true;
-}
-
-if (map == "jrb") {
-return true;
-}
-
-if (map == "thi") {
-return true;
-}
-
-if (map == "ttc") {
-return true;
-}
-
-if (map == "rr") {
-return true;
-}
-
-if (map == "bow1") {
-return true;
-}
-
-if (map == "vc") {
-return true;
-}
-
-if (map == "bow2") {
-return true;
-}
-
-if (map == "sa") {
-return true;
-}
-
-if (map == "bow3") {
-return true;
-}
-
-if (map == "lll") {
-return true;
-}
-
-if (map == "ddd") {
-return true;
-}
-
-if (map == "wf") {
-return true;
-}
-
-if (map == "mc") {
-return true;
-}
-
-if (map == "wc") {
-return true;
-}
-
-if (map == "rcb") {
-return true;
-}
-
-if (map == "ttm") {
-return true;
-}
-
-else {
-System.out.println("Error");
-return false;
-}
 }
 
    public static void randomizer(File fh, boolean rc, boolean ss, boolean oc, boolean mc, boolean et, boolean sc, boolean ms, boolean wp) throws IOException{
